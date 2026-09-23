@@ -151,13 +151,13 @@ function App() {
             <div className="logo">
               <img
                 src="https://png.pngtree.com/png-clipart/20220603/original/pngtree-game-stick-icon-design-png-image_7903151.png"
-                alt="GameVault Logo"
+                alt="GameShelf Logo"
               />
             </div>
 
             <div>
               <h1>
-                Game<span>Vault</span>
+                Game<span>Shelf</span>
               </h1>
 
               <p>Game Collection</p>
