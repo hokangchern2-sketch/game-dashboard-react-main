@@ -157,7 +157,7 @@ function App() {
 
             <div>
               <h1>
-                Game<span>Shelf</span>
+               Alex's<span></span> Game<span>Shelf</span>
               </h1>
 
               <p>Game Collection</p>
