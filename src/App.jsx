@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Game from "./Game";
 
 // ========================================
 // GAME DATA
@@ -67,18 +68,32 @@ const initialGames = [
 const fallbackImage =
   "https://placehold.co/800x600/111/daa520?text=Game";
 
+
+// ========================================
+// MAIN APP
+// ========================================
+
 function App() {
+
   // ========================================
   // STATE
   // ========================================
 
   const [games, setGames] = useState(initialGames);
-  const [currentPlatform, setCurrentPlatform] = useState("All");
+
+  const [currentPlatform, setCurrentPlatform] =
+    useState("All");
 
   const [title, setTitle] = useState("");
+
   const [image, setImage] = useState("");
-  const [platform, setPlatform] = useState("PC");
-  const [rating, setRating] = useState("5");
+
+  const [platform, setPlatform] =
+    useState("PC");
+
+  const [rating, setRating] =
+    useState("5");
+
 
   // ========================================
   // FILTER GAMES
@@ -88,8 +103,10 @@ function App() {
     currentPlatform === "All"
       ? games
       : games.filter(
-          (game) => game.platform === currentPlatform
+          (game) =>
+            game.platform === currentPlatform
         );
+
 
   // ========================================
   // PLATFORM COUNTS
@@ -97,47 +114,60 @@ function App() {
 
   const getPlatformCount = (platformName) => {
     return games.filter(
-      (game) => game.platform === platformName
+      (game) =>
+        game.platform === platformName
     ).length;
   };
+
 
   // ========================================
   // ADD GAME
   // ========================================
 
   const handleSubmit = (event) => {
+
     event.preventDefault();
 
     const newGame = {
       id: Date.now(),
+
       title: title.trim(),
+
       platform: platform,
+
       rating: Number(rating),
-      image: image.trim() || fallbackImage,
+
+      image:
+        image.trim() || fallbackImage,
     };
+
 
     setGames((currentGames) => [
       ...currentGames,
       newGame,
     ]);
 
-    // Clear form
+
+    // Clear the form
+
     setTitle("");
+
     setImage("");
+
     setPlatform("PC");
+
     setRating("5");
   };
 
+
   // ========================================
-  // RENDER
+  // DISPLAY
   // ========================================
 
   return (
     <>
-      {/* BACKGROUND */}
       <div className="background-lines"></div>
 
-      {/* MAIN CONTAINER */}
       <main className="container">
 
         {/* =========================
@@ -157,13 +187,16 @@ function App() {
 
             <div>
               <h1>
-               Alex's<span></span> Game<span>Shelf</span>
+                Alex's <span>GameShelf</span>
               </h1>
 
-              <p>Game Collection</p>
+              <p>
+                Game Collection
+              </p>
             </div>
 
           </div>
+
 
           {/* GAME COUNTER */}
 
@@ -174,18 +207,20 @@ function App() {
             </strong>
 
             <small>
-              OF 10 TOTAL
+              GAMES TOTAL
             </small>
 
           </div>
 
         </header>
 
+
         {/* =========================
             DASHBOARD
         ========================== */}
 
         <section className="dashboard">
+
 
           {/* LEFT SIDE */}
 
@@ -203,46 +238,13 @@ function App() {
 
                 filteredGames.map((game) => (
 
-                  <article
-                    className="game-card"
+                  <Game
                     key={game.id}
-                  >
-
-                    <img
-                      src={game.image}
-                      alt={game.title}
-                      onError={(event) => {
-                        event.currentTarget.src =
-                          fallbackImage;
-                      }}
-                    />
-
-                    <div className="game-info">
-
-                      <div className="game-platform">
-                        {game.platform}
-                      </div>
-
-                      <h2>
-                        {game.title}
-                      </h2>
-
-                      <div>
-
-                        <span className="stars">
-                          {"★".repeat(game.rating)}
-                          {"☆".repeat(5 - game.rating)}
-                        </span>
-
-                        <span className="rating">
-                          {game.rating} / 5
-                        </span>
-
-                      </div>
-
-                    </div>
-
-                  </article>
+                    image={game.image}
+                    title={game.title}
+                    platform={game.platform}
+                    rating={game.rating}
+                  />
 
                 ))
 
@@ -252,13 +254,15 @@ function App() {
 
           </div>
 
-          {/* =========================
-              RIGHT SIDEBAR
-          ========================== */}
+
+          {/* RIGHT SIDEBAR */}
 
           <aside className="sidebar">
 
-            {/* PLATFORM PANEL */}
+
+            {/* =========================
+                PLATFORMS
+            ========================== */}
 
             <div className="panel">
 
@@ -266,22 +270,33 @@ function App() {
                 PLATFORMS
               </div>
 
+
+              {/* ALL */}
+
               <button
                 className={`platform ${
                   currentPlatform === "All"
                     ? "active"
                     : ""
                 }`}
+
                 onClick={() =>
                   setCurrentPlatform("All")
                 }
               >
-                <span>All</span>
+
+                <span>
+                  All
+                </span>
 
                 <strong>
                   {games.length}
                 </strong>
+
               </button>
+
+
+              {/* PC */}
 
               <button
                 className={`platform ${
@@ -289,16 +304,24 @@ function App() {
                     ? "active"
                     : ""
                 }`}
+
                 onClick={() =>
                   setCurrentPlatform("PC")
                 }
               >
-                <span>PC</span>
+
+                <span>
+                  PC
+                </span>
 
                 <strong>
                   {getPlatformCount("PC")}
                 </strong>
+
               </button>
+
+
+              {/* PLAYSTATION */}
 
               <button
                 className={`platform ${
@@ -306,18 +329,28 @@ function App() {
                     ? "active"
                     : ""
                 }`}
+
                 onClick={() =>
-                  setCurrentPlatform("PlayStation")
+                  setCurrentPlatform(
+                    "PlayStation"
+                  )
                 }
               >
-                <span>PlayStation</span>
+
+                <span>
+                  PlayStation
+                </span>
 
                 <strong>
                   {getPlatformCount(
                     "PlayStation"
                   )}
                 </strong>
+
               </button>
+
+
+              {/* XBOX */}
 
               <button
                 className={`platform ${
@@ -325,20 +358,28 @@ function App() {
                     ? "active"
                     : ""
                 }`}
+
                 onClick={() =>
                   setCurrentPlatform("Xbox")
                 }
               >
-                <span>Xbox</span>
+
+                <span>
+                  Xbox
+                </span>
 
                 <strong>
                   {getPlatformCount("Xbox")}
                 </strong>
+
               </button>
 
             </div>
 
-            {/* ADD GAME */}
+
+            {/* =========================
+                ADD GAME
+            ========================== */}
 
             <div className="add-panel">
 
@@ -346,36 +387,52 @@ function App() {
                 ADD GAME
               </h2>
 
+
               <form
                 id="gameForm"
                 onSubmit={handleSubmit}
               >
+
+                {/* GAME TITLE */}
 
                 <input
                   type="text"
                   placeholder="Game title"
                   value={title}
                   onChange={(event) =>
-                    setTitle(event.target.value)
+                    setTitle(
+                      event.target.value
+                    )
                   }
                   required
                 />
+
+
+                {/* IMAGE */}
 
                 <input
                   type="url"
                   placeholder="Image URL"
                   value={image}
                   onChange={(event) =>
-                    setImage(event.target.value)
+                    setImage(
+                      event.target.value
+                    )
                   }
                 />
+
+
+                {/* PLATFORM */}
 
                 <select
                   value={platform}
                   onChange={(event) =>
-                    setPlatform(event.target.value)
+                    setPlatform(
+                      event.target.value
+                    )
                   }
                 >
+
                   <option value="PC">
                     PC
                   </option>
@@ -387,14 +444,21 @@ function App() {
                   <option value="Xbox">
                     Xbox
                   </option>
+
                 </select>
+
+
+                {/* RATING */}
 
                 <select
                   value={rating}
                   onChange={(event) =>
-                    setRating(event.target.value)
+                    setRating(
+                      event.target.value
+                    )
                   }
                 >
+
                   <option value="1">
                     1 / 5
                   </option>
@@ -414,7 +478,11 @@ function App() {
                   <option value="5">
                     5 / 5
                   </option>
+
                 </select>
+
+
+                {/* SUBMIT */}
 
                 <button
                   type="submit"
