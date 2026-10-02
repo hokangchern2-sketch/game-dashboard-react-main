@@ -187,7 +187,7 @@ function App() {
 
             <div>
               <h1>
-                Alex's <span>GameShelf</span>
+                 <span>GameShelf</span>
               </h1>
 
               <p>
