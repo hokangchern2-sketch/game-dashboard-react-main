@@ -4,15 +4,18 @@ A React-based game collection dashboard that allows users to view, filter, and a
 
 
 
- Image 2
 <img src="https://github.com/user-attachments/assets/a356bcc6-21d7-4e63-a514-114d373ed7ac" width="800">
 
-Image 1: This is the image for the dashboard.
+Image 1: This is the  dashboard.
 
-<img src="https://github.com/user-attachments/assets/4e23f91b-d441-406f-9011-9db99ba035c9" width="800">
+<img src="https://github.com/user-attachments/assets/4e23f91b-d441-406f-9011-9db99ba035c9" width="600">
 
 
-Image 2: This is the image for the platform section.
+Image 2: This is the the platform section to Filter games by platform 
+
+<img src="https://github.com/user-attachments/assets/7f05e48d-27ef-4cb7-a923-3ba957372ca8"  width="600">
+
+Image 3: This is the add game form to add new games, add an image URL for a game and to add a game ratings for the game
 
 The application allows users to:
 
