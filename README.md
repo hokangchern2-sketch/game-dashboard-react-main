@@ -1,16 +1,92 @@
-# React + Vite
+#  GameShelf
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based game collection dashboard that allows users to view, filter, and add games to their personal collection. GameShelf is a web application built using React and Vite.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+<img width="3401" height="1257" alt="image" src="https://github.com/user-attachments/assets/a356bcc6-21d7-4e63-a514-114d373ed7ac" />
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## Expanding the ESLint configuration
+The application allows users to:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- View games in their collection
+- Filter games by platform
+- View game ratings
+- Add new games
+- Add an image URL for a game
+- Automatically update the total number of games
+- Display a fallback image when a game image cannot be loaded
+
+## Main Features
+
+### 1. Game Collection
+
+The application stores game information such as:
+
+- Game title
+- Platform
+- Rating
+- Image
+
+The games are stored in React state so the collection can be updated when a new game is added.
+
+### 2. Platform Filtering
+
+Users can filter their collection by:
+
+- All
+- PC
+- PlayStation
+- Xbox
+
+The application uses JavaScript's `filter()` method to display only games that match the selected platform.
+
+### 3. Reusable Game Component
+
+Each game card is displayed using a reusable React `Game` component.
+
+The `Game` component receives these values as props:
+
+- Image
+- Title
+- Platform
+- Rating
+
+This allows the same component to be reused for every game in the collection.
+
+### 4. Add Game
+
+Users can add a new game by entering:
+
+- Game title
+- Image URL
+- Platform
+- Rating
+
+When the form is submitted, the new game is added to the existing game collection using React state.
+
+### 5. Game Rating
+
+Each game displays a rating from 1 to 5 stars.
+
+### 6. Image Fallback
+
+If a game image cannot be loaded, the application displays a fallback image instead.
+
+## Technologies Used
+
+- React
+- JavaScript
+- HTML
+- CSS
+- Vite
+
+## Project Structure
+
+```text
+src/
+├── App.jsx
+├── Game.jsx
+├── App.css
+├── index.css
+└── main.jsx
