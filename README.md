@@ -4,7 +4,8 @@ A React-based game collection dashboard that allows users to view, filter, and a
 
 
 <img width="3401" height="1257" alt="image" src="https://github.com/user-attachments/assets/a356bcc6-21d7-4e63-a514-114d373ed7ac" />
-
+ Image 1: This is the image for the dashboard
+ 
 
 
 The application allows users to:
