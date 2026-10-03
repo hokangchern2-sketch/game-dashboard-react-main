@@ -3,14 +3,16 @@
 A React-based game collection dashboard that allows users to view, filter, and add games to their personal collection. GameShelf is a web application built using React and Vite.
 
 
-<img width="3401" height="1257" alt="image" src="https://github.com/user-attachments/assets/a356bcc6-21d7-4e63-a514-114d373ed7ac" />
- Image 1: This is the image for the dashboard
 
- 
-<img width="208" height="175" alt="image" src="https://github.com/user-attachments/assets/4e23f91b-d441-406f-9011-9db99ba035c9" />
- 
  Image 2
+<img src="https://github.com/user-attachments/assets/a356bcc6-21d7-4e63-a514-114d373ed7ac" width="800">
 
+Image 1: This is the image for the dashboard.
+
+<img src="https://github.com/user-attachments/assets/4e23f91b-d441-406f-9011-9db99ba035c9" width="800">
+
+
+Image 2: This is the image for the platform section.
 
 The application allows users to:
 
