@@ -91,12 +91,4 @@ If a game image cannot be loaded, the application displays a fallback image inst
 - CSS
 - Vite
 
-## Project Structure
 
-```text
-src/
-├── App.jsx
-├── Game.jsx
-├── App.css
-├── index.css
-└── main.jsx
