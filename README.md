@@ -8,7 +8,8 @@ A React-based game collection dashboard that allows users to view, filter, and a
 
  
 <img width="208" height="175" alt="image" src="https://github.com/user-attachments/assets/4e23f91b-d441-406f-9011-9db99ba035c9" />
-Image 2
+ 
+ Image 2
 
 
 The application allows users to:
