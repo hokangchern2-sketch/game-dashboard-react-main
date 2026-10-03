@@ -15,7 +15,7 @@ Image 2: This is the the platform section to Filter games by platform
 
 <img src="https://github.com/user-attachments/assets/7f05e48d-27ef-4cb7-a923-3ba957372ca8"  width="600">
 
-Image 3: This is the add game form to add new games, add an image URL for a game and to add a game ratings for the game
+Image 3: This is the add game form to add new games, add an image URL for a game and to add  game ratings for the game
 
 The application allows users to:
 
