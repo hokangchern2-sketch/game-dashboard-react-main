@@ -103,9 +103,9 @@ function App() {
     currentPlatform === "All"
       ? games
       : games.filter(
-          (game) =>
-            game.platform === currentPlatform
-        );
+        (game) =>
+          game.platform === currentPlatform
+      );
 
 
   // ========================================
@@ -166,7 +166,6 @@ function App() {
 
   return (
     <>
-      <div className="background-lines"></div>
 
       <main className="container">
 
@@ -187,7 +186,7 @@ function App() {
 
             <div>
               <h1>
-                 <span>GameShelf</span>
+                <span>GameShelf</span>
               </h1>
 
               <p>
@@ -274,11 +273,10 @@ function App() {
               {/* ALL */}
 
               <button
-                className={`platform ${
-                  currentPlatform === "All"
+                className={`platform ${currentPlatform === "All"
                     ? "active"
                     : ""
-                }`}
+                  }`}
 
                 onClick={() =>
                   setCurrentPlatform("All")
@@ -299,11 +297,10 @@ function App() {
               {/* PC */}
 
               <button
-                className={`platform ${
-                  currentPlatform === "PC"
+                className={`platform ${currentPlatform === "PC"
                     ? "active"
                     : ""
-                }`}
+                  }`}
 
                 onClick={() =>
                   setCurrentPlatform("PC")
@@ -324,11 +321,10 @@ function App() {
               {/* PLAYSTATION */}
 
               <button
-                className={`platform ${
-                  currentPlatform === "PlayStation"
+                className={`platform ${currentPlatform === "PlayStation"
                     ? "active"
                     : ""
-                }`}
+                  }`}
 
                 onClick={() =>
                   setCurrentPlatform(
@@ -353,11 +349,10 @@ function App() {
               {/* XBOX */}
 
               <button
-                className={`platform ${
-                  currentPlatform === "Xbox"
+                className={`platform ${currentPlatform === "Xbox"
                     ? "active"
                     : ""
-                }`}
+                  }`}
 
                 onClick={() =>
                   setCurrentPlatform("Xbox")
