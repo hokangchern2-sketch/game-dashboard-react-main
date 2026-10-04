@@ -198,15 +198,14 @@ function App() {
 
 
           {/* GAME COUNTER */}
-
           <div className="counter">
 
             <strong>
-              {games.length}
+              {filteredGames.length}
             </strong>
 
             <small>
-              GAMES TOTAL
+              GAMES SHOWN
             </small>
 
           </div>
@@ -274,8 +273,8 @@ function App() {
 
               <button
                 className={`platform ${currentPlatform === "All"
-                    ? "active"
-                    : ""
+                  ? "active"
+                  : ""
                   }`}
 
                 onClick={() =>
@@ -298,8 +297,8 @@ function App() {
 
               <button
                 className={`platform ${currentPlatform === "PC"
-                    ? "active"
-                    : ""
+                  ? "active"
+                  : ""
                   }`}
 
                 onClick={() =>
@@ -322,8 +321,8 @@ function App() {
 
               <button
                 className={`platform ${currentPlatform === "PlayStation"
-                    ? "active"
-                    : ""
+                  ? "active"
+                  : ""
                   }`}
 
                 onClick={() =>
@@ -350,8 +349,8 @@ function App() {
 
               <button
                 className={`platform ${currentPlatform === "Xbox"
-                    ? "active"
-                    : ""
+                  ? "active"
+                  : ""
                   }`}
 
                 onClick={() =>
